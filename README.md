@@ -7,11 +7,12 @@ Counter-Up is a jQuery plugin that *animates* a number from zero (counting up to
 * floats `0.1234`
 * numbers with commas `1,234,567.00`
 
------
+*Requires [waypoints.js](http://imakewebthings.com/jquery-waypoints/)*
+
+Demo
+====
 
 **[DEMO](http://bfintal.github.io/Counter-Up/demo/demo.html)**
-
-*Requires [waypoints.js](http://imakewebthings.com/jquery-waypoints/)*
 
 Usage
 =====
