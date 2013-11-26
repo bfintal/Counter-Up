@@ -49,15 +49,19 @@
         color: #fff;
         border-radius: 100%;
     }
-    code {
+    code, code > span {
         text-align: left;
         display: block;
         font-family: Monaco, monospace;
         background: #444;
         color: #fff;
         padding: 20px;
-        margin: 0 15%;
-        margin-bottom: 200px;
+        font-size: 14px;
+        margin-bottom: 100px;
+    }
+    code > span {
+        padding: 0;
+        margin: 0;
     }
     @media only screen and (max-width: 1024px) {
         span {
@@ -98,11 +102,26 @@
 <body>
     <h1>Counter-Up jQuery Plugin</h1>
     <h3>(Scroll down)</h3>
-    <code>
-        $('.counter').counterUp({<br>
-        &nbsp; &nbsp; delay: 10,<br>
-        &nbsp; &nbsp; time: 1000<br>
-        });
+    <code class="small">
+        &lt;head><br>
+        &nbsp; &nbsp; &lt;script><br>
+        &nbsp; &nbsp; &nbsp; &nbsp; jQuery(document).ready(function($) {<br>
+        <span style="color: #f1c40f">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $('.counter').counterUp({<br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; delay: 10,<br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; time: 1000<br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });<br>
+        </span>
+        &nbsp; &nbsp; &nbsp; &nbsp; });<br>
+        &nbsp; &nbsp; &lt;/script><br>
+        &lt;/head><br>
+        &lt;body><br>
+        <span style="color: #f1c40f">
+        &nbsp; &nbsp; &lt;span class="counter">1,234,567&lt;/span><br>
+        &nbsp; &nbsp; &lt;script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js">&lt;/script><br>
+        &nbsp; &nbsp; &lt;script src="jquery.counterup.min.js">&lt;/script><br>
+        </span>
+        &lt;/body>
     </code>
     <!-- <span><span class="counter circle">12345</span></span> -->
     <div>
