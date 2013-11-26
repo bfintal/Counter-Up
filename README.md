@@ -7,6 +7,13 @@ Counter-Up is a jQuery plugin that *animates* a number from zero (counting up to
 * floats `0.1234`
 * formatted numbers `1,234,567.00`
 
+Features:
+
+* Auto-detect for integers, floats or formatted numbers
+* The plugin will also use the number of decimal places the original number is using.
+* Lightweight: ~1kb
+* Minimal setup
+
 *Requires [waypoints.js](http://imakewebthings.com/jquery-waypoints/)*
 
 Demo
@@ -28,6 +35,8 @@ Usage
 
 ```
 <span class="counter">1,234,567.00</span>
+<span>$</span><span class="counter">1.99</span>
+<span class="counter">12345</span>
 ```
 
 **jQuery**
@@ -36,7 +45,7 @@ Usage
 $('.counter').counterUp();
 ```
 
-**Extra parameters**
+**or with extra parameters**
 
 ```
 $('.counter').counterUp({
@@ -44,6 +53,10 @@ $('.counter').counterUp({
     time: 1000
 });
 ```
+
+`delay` - The delay in milliseconds per number count up
+
+`time` - The total duration of the count up animation
 
 Social Stuff
 ============
