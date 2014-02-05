@@ -33,6 +33,19 @@
             var isFloat = /^[0-9]+\.[0-9]+$/.test(num);
             var decimalPlaces = isFloat ? (num.split('.')[1] || []).length : 0;
 
+            var isTime = /[0-9]+:[0-9]+:[0-9]+/.test(num);
+
+            // Convert time to total seconds
+            if (isTime) {
+                var times = num.split(':');
+                var s = 0;
+                var m = 1;
+                while (times.length > 0) {
+                    s += m * parseInt(times.pop(), 10);
+                    m *= 60;
+                }
+            }
+
             // Generate list of incremental numbers to display
             for (var i = divisions; i >= 1; i--) {
 
@@ -43,6 +56,15 @@
                 if (isFloat) {
                     newNum = parseFloat(num / divisions * i).toFixed(decimalPlaces);
                 }
+
+                // Add incremental seconds and convert back to time
+                if (isTime) {
+                    newNum = parseInt(s / divisions * i)
+                    var hours = parseInt(newNum / 3600 ) % 24;
+                    var minutes = parseInt(newNum / 60 ) % 60;
+                    var seconds = parseInt(newNum % 60, 10);
+                    newNum = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
+                }    
 
                 // Preserve commas if input had commas
                 if (isComma) {
