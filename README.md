@@ -31,6 +31,14 @@ Usage
 <script src="jquery.counterup.min.js"></script>
 ```
 
+#### Using with a CDN:
+
+CDN provided by [jsDelivr CDN](http://www.jsdelivr.com/#!jquery.counterup)
+
+```
+<script src="//cdn.jsdelivr.net/jquery.counterup/1.0/jquery.counterup.min.js"></script>
+```
+
 **HTML**
 
 ```
