@@ -14,7 +14,8 @@
     // Defaults
     var settings = $.extend({
         'time': 400,
-        'delay': 10
+        'delay': 10,
+        'formatter': false
     }, options);
 
     return this.each(function(){
@@ -51,6 +52,10 @@
                     }
                 }
 
+                if ($settings.formatter) {
+                    newNum = $settings.formatter.call(this, newNum);
+                }
+
                 nums.unshift(newNum);
             }
 
@@ -59,7 +64,7 @@
 
             // Updates the number until we're done
             var f = function() {
-                $this.text($this.data('counterup-nums').shift());
+                $this.html($this.data('counterup-nums').shift());
                 if ($this.data('counterup-nums').length) {
                     setTimeout($this.data('counterup-func'), $settings.delay);
                 } else {
