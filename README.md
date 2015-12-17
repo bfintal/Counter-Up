@@ -21,7 +21,10 @@ Demo
 
 **[DEMO](http://bfintal.github.io/Counter-Up/demo/demo.html)**
 
-Usage
+Install with Bower
+```
+bower install counterup
+```
 =====
 
 **Include**
