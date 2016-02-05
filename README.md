@@ -11,6 +11,7 @@ Features:
 
 * Auto-detect for integers, floats or formatted numbers
 * The plugin will also use the number of decimal places the original number is using.
+* Start counter with a different duration and delay by setting `data-counterup-time=""` and `data-counterup-delay=""`
 * Lightweight: ~1kb
 * Minimal setup
 
@@ -33,10 +34,15 @@ Usage
 
 **HTML**
 
+With default values from plugin instantiation.
 ```
 <span class="counter">1,234,567.00</span>
 <span>$</span><span class="counter">1.99</span>
 <span class="counter">12345</span>
+```
+With values from `data` attribute.
+```
+<span class="counter" data-counterup-time="1500" data-counterup-delay="30">1,234,567.00</span>
 ```
 
 **jQuery**
