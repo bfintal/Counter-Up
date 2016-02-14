@@ -29,20 +29,11 @@
             var num = $this.text();
             var isComma = /[0-9]+,[0-9]+/.test(num);
             num = num.replace(/,/g, '');
-            var isInt = /^[0-9]+$/.test(num);
-            var isFloat = /^[0-9]+\.[0-9]+$/.test(num);
-            var decimalPlaces = isFloat ? (num.split('.')[1] || []).length : 0;
+            var decimalPlaces = (num.split('.')[1] || []).length;
 
             // Generate list of incremental numbers to display
             for (var i = divisions; i >= 1; i--) {
-
-                // Preserve as int if input was int
-                var newNum = parseInt(num / divisions * i);
-
-                // Preserve float if input was float
-                if (isFloat) {
-                    newNum = parseFloat(num / divisions * i).toFixed(decimalPlaces);
-                }
+                var newNum = parseFloat(num / divisions * i).toFixed(decimalPlaces);
 
                 // Preserve commas if input had commas
                 if (isComma) {
@@ -50,7 +41,6 @@
                         newNum = newNum.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
                     }
                 }
-
                 nums.unshift(newNum);
             }
 
