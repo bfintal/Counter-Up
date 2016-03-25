@@ -6,7 +6,7 @@
     "url": "https://github.com/bfintal/"
   },
   "description": "A lightweight jQuery plugin that counts up to a targeted number when the number becomes visible.",
-  "main": "",
+  "main": "jquery.counterup.js",
   "moduleType": [],
   "keywords": [
     "jquery",
