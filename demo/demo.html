@@ -94,7 +94,7 @@
         $('.counter').counterUp({
             delay: 10,
             time: 1000,
-            callback: function() {}
+            callback: function() { console.log('It works!'); }
         });
     });
   </script>
@@ -156,6 +156,6 @@
         <span class="counter" style="display: inline-block; width: 32%">5,123,348</span>
     </div>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-    <script src="../jquery.counterup.js"></script>
+    <script src="../jquery.counterup.min.js"></script>
 </body>
 </html>
