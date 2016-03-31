@@ -94,7 +94,7 @@
         $('.counter').counterUp({
             delay: 10,
             time: 1000,
-            callback: function() { console.log('It works!'); }
+            callback: function(e) { console.log(e); }
         });
     });
   </script>
