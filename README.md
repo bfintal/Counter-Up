@@ -50,13 +50,16 @@ $('.counter').counterUp();
 ```
 $('.counter').counterUp({
     delay: 10,
-    time: 1000
+    time: 1000,
+    beginAt: 0
 });
 ```
 
 `delay` - The delay in milliseconds per number count up
 
 `time` - The total duration of the count up animation
+
+`beginAt` - Where you want the number to begin moving up from
 
 Social Stuff
 ============
