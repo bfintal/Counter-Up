@@ -27,7 +27,7 @@ Usage
 **Include**
 
 ```
-<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <script src="jquery.counterup.min.js"></script>
 ```
 

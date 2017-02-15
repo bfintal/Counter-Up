@@ -72,10 +72,13 @@
 
             // Start the count up
             setTimeout($this.data('counterup-func'), $settings.delay);
+
+            // Destroy waypoint so that it will be triggered only once
+            this.destroy();
         };
 
         // Perform counts when the element gets into view
-        $this.waypoint(counterUpper, { offset: '100%', triggerOnce: true });
+        $this.waypoint(counterUpper, { offset: '100%' });
     });
 
   };
