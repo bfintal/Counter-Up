@@ -15,7 +15,7 @@
     var settings = $.extend({
         'time': 400,
         'delay': 10,
-        'beginAt': 1
+        'beginAt': 0
     }, options);
 
     return this.each(function(){
