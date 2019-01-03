@@ -1,3 +1,5 @@
+## Please use [Counter-Up2](https://github.com/bfintal/Counter-Up2) instead.
+
 Counter-Up
 ==========
 
