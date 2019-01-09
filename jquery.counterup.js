@@ -59,6 +59,10 @@
 
             // Updates the number until we're done
             var f = function() {
+                // Avoid errors. Sometimes this code is run even when there is no counterup-nums
+                // Seems to happen when loading wihtut the counter in the view and then showing it
+                if (!$this.data('counterup-nums')) return;
+              
                 $this.text($this.data('counterup-nums').shift());
                 if ($this.data('counterup-nums').length) {
                     setTimeout($this.data('counterup-func'), $settings.delay);
