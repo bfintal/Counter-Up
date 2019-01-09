@@ -1,10 +1,11 @@
 /*!
-* jquery.counterup.js 1.0
+* jquery.counterup.js 1.1
 *
 * Copyright 2013, Benjamin Intal http://gambit.ph @bfintal
 * Released under the GPL v2 License
 *
 * Date: Nov 26, 2013
+* Update Date: Mar 21, 2017
 */
 (function( $ ){
   "use strict";
@@ -24,6 +25,12 @@
         var $settings = settings;
 
         var counterUpper = function() {
+            //Record original value
+            if (typeof $this.attr('counterup-text') === 'undefined')
+                $this.attr('counterup-text', $this.text());
+
+            if ($this.attr('counterup-text') !== $this.text()) return;    //Count up not completed
+
             var nums = [];
             var divisions = $settings.time / $settings.delay;
             var num = $this.text();
