@@ -1,6 +1,6 @@
 {
   "name": "counterup",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "title": "Counter-Up",
   "description": "A lightweight jQuery plugin that counts up to a targeted number when the number becomes visible.",
   "keywords": [
