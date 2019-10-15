@@ -12,7 +12,7 @@ Counter-Up is a jQuery plugin that *animates* a number from zero (counting up to
 Features:
 
 * Auto-detect for integers, floats or formatted numbers
-* The plugin will also use the number of decimal places the original number is using.
+* This plugin will also use the number of decimal places the original number is using.
 * Lightweight: ~1kb
 * Minimal setup
 
