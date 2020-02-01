@@ -14,7 +14,9 @@
     // Defaults
     var settings = $.extend({
         'time': 400,
-        'delay': 10
+        'delay': 10,
+        'european': false,
+        'repeat': true // switch to false to destroy waypoint
     }, options);
 
     return this.each(function(){
@@ -32,6 +34,7 @@
             var isInt = /^[0-9]+$/.test(num);
             var isFloat = /^[0-9]+\.[0-9]+$/.test(num);
             var decimalPlaces = isFloat ? (num.split('.')[1] || []).length : 0;
+            var delimeter = ',';
 
             // Generate list of incremental numbers to display
             for (var i = divisions; i >= 1; i--) {
@@ -44,10 +47,17 @@
                     newNum = parseFloat(num / divisions * i).toFixed(decimalPlaces);
                 }
 
+                // Change number to european format
+                if ($settings.european) {
+                    delimeter = '.';
+                    newNum = newNum.toString().replace(/\./, ',');
+                }
+
                 // Preserve commas if input had commas
                 if (isComma) {
                     while (/(\d+)(\d{3})/.test(newNum.toString())) {
-                        newNum = newNum.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+                        // ref: https://blog.abelotech.com/posts/number-currency-formatting-javascript/
+                        newNum = newNum.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + delimeter);
                     }
                 }
 
@@ -75,7 +85,13 @@
         };
 
         // Perform counts when the element gets into view
-        $this.waypoint(counterUpper, { offset: '100%', triggerOnce: true });
+        $this.waypoint(function(){
+            counterUpper();
+
+            if (!$settings.repeat) {
+                this.destroy();
+            }
+        }, { offset: '100%', triggerOnce: true });
     });
 
   };
