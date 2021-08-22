@@ -1,4 +1,4 @@
-## Please use [Counter-Up2](https://github.com/bfintal/Counter-Up2) instead.
+## Please use [Counter-Up2](https://github.com/bfintal/Counter-Up2) instead, Counter Up 2 greatly improves on Counter Up, has no dependencies, lightweight, uses modern code, and more.
 
 Counter-Up
 ==========
