@@ -24,9 +24,12 @@
         var $settings = settings;
 
         var counterUpper = function() {
-            var nums = [];
+            if(!$this.data('counterupTo')){
+                $this.data('counterupTo',$this.text());
+            }
             var divisions = $settings.time / $settings.delay;
-            var num = $this.text();
+            var num = $this.data('counterupTo');
+            var nums = [num];
             var isComma = /[0-9]+,[0-9]+/.test(num);
             num = num.replace(/,/g, '');
             var isInt = /^[0-9]+$/.test(num);
