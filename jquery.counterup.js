@@ -1,10 +1,10 @@
 /*!
-* jquery.counterup.js 1.0
+* jquery.counterup.js 1.1.0
 *
 * Copyright 2013, Benjamin Intal http://gambit.ph @bfintal
 * Released under the GPL v2 License
 *
-* Date: Nov 26, 2013
+* Date: Feb 05, 2016
 */
 (function( $ ){
   "use strict";
@@ -21,11 +21,15 @@
 
         // Store the object
         var $this = $(this);
-        var $settings = settings;
+
+        var counter = {
+            time: $(this).data('counterup-time') || settings.time,
+            delay: $(this).data('counterup-delay') || settings.delay
+        };
 
         var counterUpper = function() {
             var nums = [];
-            var divisions = $settings.time / $settings.delay;
+            var divisions = counter.time / counter.delay;
             var num = $this.text();
             var isComma = /[0-9]+,[0-9]+/.test(num);
             num = num.replace(/,/g, '');
@@ -61,7 +65,7 @@
             var f = function() {
                 $this.text($this.data('counterup-nums').shift());
                 if ($this.data('counterup-nums').length) {
-                    setTimeout($this.data('counterup-func'), $settings.delay);
+                    setTimeout($this.data('counterup-func'), counter.delay);
                 } else {
                     delete $this.data('counterup-nums');
                     $this.data('counterup-nums', null);
@@ -71,7 +75,7 @@
             $this.data('counterup-func', f);
 
             // Start the count up
-            setTimeout($this.data('counterup-func'), $settings.delay);
+            setTimeout($this.data('counterup-func'), counter.delay);
         };
 
         // Perform counts when the element gets into view
