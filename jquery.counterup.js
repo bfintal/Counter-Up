@@ -14,7 +14,8 @@
     // Defaults
     var settings = $.extend({
         'time': 400,
-        'delay': 10
+        'delay': 10,
+        'beginAt': 0
     }, options);
 
     return this.each(function(){
@@ -32,10 +33,10 @@
             var isInt = /^[0-9]+$/.test(num);
             var isFloat = /^[0-9]+\.[0-9]+$/.test(num);
             var decimalPlaces = isFloat ? (num.split('.')[1] || []).length : 0;
+            if ($settings.beginAt > num) $settings.beginAt = num
 
             // Generate list of incremental numbers to display
-            for (var i = divisions; i >= 1; i--) {
-
+            for (var i = divisions; i >= $settings.beginAt / num * divisions; i--) {
                 // Preserve as int if input was int
                 var newNum = parseInt(num / divisions * i);
 
@@ -55,7 +56,7 @@
             }
 
             $this.data('counterup-nums', nums);
-            $this.text('0');
+            $this.text($settings.beginAt);
 
             // Updates the number until we're done
             var f = function() {
