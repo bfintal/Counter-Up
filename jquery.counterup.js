@@ -63,7 +63,6 @@
                 if ($this.data('counterup-nums').length) {
                     setTimeout($this.data('counterup-func'), $settings.delay);
                 } else {
-                    delete $this.data('counterup-nums');
                     $this.data('counterup-nums', null);
                     $this.data('counterup-func', null);
                 }
