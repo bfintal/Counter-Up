@@ -26,7 +26,7 @@
         var counterUpper = function() {
             var nums = [];
             var divisions = $settings.time / $settings.delay;
-            var num = $this.text();
+            var num = $.trim($this.text());
             var isComma = /[0-9]+,[0-9]+/.test(num);
             num = num.replace(/,/g, '');
             var isInt = /^[0-9]+$/.test(num);
